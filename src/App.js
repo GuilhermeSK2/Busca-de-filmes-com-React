@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-
+import './App.css'
   
 
 function BuscaDeFilmes() { 
@@ -16,7 +16,7 @@ function BuscaDeFilmes() {
 
     try { 
 
-      const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=YOUR_API_KEY`); 
+      const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=3a019996`); 
 
       const data = await response.json(); 
 
@@ -66,9 +66,9 @@ function BuscaDeFilmes() {
 
   return ( 
 
-    <div> 
+    <div className='content'> 
 
-      <h2>Busca de Filmes</h2> 
+      <h2>Buscador de Filmes</h2> 
 
       <form onSubmit={handleSubmit}> 
 
@@ -90,7 +90,7 @@ function BuscaDeFilmes() {
 
       {erro && <p>{erro}</p>} 
 
-      <div> 
+      <div className='resultados'> 
 
         {filmes.map((filme) => ( 
 
